@@ -5,7 +5,7 @@
  * @param {function}    callback  Function to call when it's time to update your animation for the next repaint.
  * @param {HTMLElement} element   Optional parameter specifying the element that visually bounds the entire animation.
  * @return {number} Animation frame request.
- */
+ */ 
 if (!window.requestAnimationFrame) {
   window.requestAnimationFrame = (window.webkitRequestAnimationFrame ||
                                   window.mozRequestAnimationFrame ||

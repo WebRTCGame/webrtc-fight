@@ -4,7 +4,7 @@ var Player = function Player(playerNum,playerLvl, settings) {
     this.maxTime = settings.maxTime || 10000;
     this.currentTime = this.maxTime;
     this.attack = settings.attack || {
-        high: 10,
+        high: 10, 
         med: 10,
         low: 10
     };
