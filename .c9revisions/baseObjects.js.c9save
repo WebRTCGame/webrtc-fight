@@ -1,0 +1,2 @@
+{"ts":1375035499808,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1375035914878,"patch":[[{"diffs":[[1,"var BaseObject = function BaseObject() {\n    Object.call(this);\n    this.dead = false;\n};\nBaseObject.prototype = Object.create(Object.prototype);\nBaseObject.prototype.draw = function() {};\nBaseObject.prototype.update = function() {};"]],"start1":0,"start2":0,"length1":0,"length2":233}]],"length":233,"saved":false}
