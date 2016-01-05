@@ -2,18 +2,8 @@ var canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
     mouse = utils.captureMouse(canvas);
 
-var hashCanvas = new Hashmap();
-hashCanvas.addCanvas = function(key) {
-    hashCanvas.add(key, document.createElement('canvas'));
-    hashCanvas.get(key).ctx = hashCanvas.get(key).getContext('2d');
-    hashCanvas.get(key).flip = function(){context.drawImage(hashCanvas.get(key),0,0)};
-    hashCanvas.get(key).drawn = false;
-    return hashCanvas.get(key);
-};
 
-//console.log(hashCanvas.addCanvas("meeow"));
-hashCanvas.addCanvas("meeow");
-console.log(hashCanvas.get("meeow"));
+
 
 /*
 hashCanvas.prototype.addCanvas = function(key){
@@ -199,20 +189,21 @@ var gameState = Stately.machine({
 });
 gameState["onbefore"+"INITIALLOADING"] = function (event, oldState, newState) {
     log("onbeforeINITIALLOADING" + " event: " + event + " / oldState:" + oldState + " / newState: " + newState); 
-    context.clearRect (0 , 0 , canvas.width , canvas.height );
-    context.fillText("Preload", 10, 50);
+    //context.clearRect (0 , 0 , canvas.width , canvas.height );
+    //context.fillText("Preload", 10, 50);
     
 };
 gameState["onenter"+"INITIALLOADING"] = function (event, oldState, newState) {
     log("onenterINITIALLOADING" + " event: " + event + " / oldState:" + oldState + " / newState: " + newState);  
-    context.clearRect (0 , 0 , canvas.width , canvas.height );
-    context.fillText("Loading", 10, 50);
+    //context.clearRect (0 , 0 , canvas.width , canvas.height );
+   // context.fillText("Loading", 10, 50);
+   sceneInitialLoading.init();
     
 };
 gameState["onleave"+"INITIALLOADING"] = function (event, oldState, newState) {
     log("onleaveINITIALLOADING" + " event: " + event + " / oldState:" + oldState + " / newState: " + newState);
-    context.clearRect (0 , 0 , canvas.width , canvas.height );
-    context.fillText("Done Loading", 10, 50);
+   // context.clearRect (0 , 0 , canvas.width , canvas.height );
+   // context.fillText("Done Loading", 10, 50);
     
 };
 
@@ -269,12 +260,12 @@ function start() {
     };
 
     setup();
-    window.requestAnimFrame(draw);
+    //window.requestAnimFrame(draw);
 };
 
 var setup = function setup(){
     //gameState.play().pause().play().pause().stop();
-gameState.stop().init().next().next().settings().videoconfig().back().back().play().back();
+gameState.stop().init()//.next().next().settings().videoconfig().back().back().play().back();
 };
 
 var update = function update(){
@@ -310,12 +301,7 @@ var update = function update(){
 
 var render = function render(){};
 
-window.requestAnimFrame = (function() {
-    'use strict';
-    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-        window.setTimeout(callback, 1000 / 60);
-    };
-})();
+
 
 /*
 storedCanvas = document.createElement('canvas');

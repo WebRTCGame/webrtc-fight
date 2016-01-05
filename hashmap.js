@@ -238,6 +238,7 @@ var Hashmap =  function(){
 };
 
 var hashmap = new Hashmap();
+
 hashmap.add("abc",5);
 console.log(hashmap.get("abc"));
 hashmap.each(function(x){
@@ -249,3 +250,21 @@ hashmap.each(function(x){
 }
 );
 console.log(hashmap.get("abc"));
+
+var hashCanvas = new Hashmap();
+
+hashCanvas.addCanvas = function(key) {
+    hashCanvas.add(key, document.createElement('canvas'));
+    
+    hashCanvas.get(key).ctx = hashCanvas.get(key).getContext('2d');
+    
+    hashCanvas.get(key).flip = function(){context.drawImage(hashCanvas.get(key),0,0)};
+    
+    hashCanvas.get(key).drawn = false;
+
+return hashCanvas.get(key);
+};
+
+//console.log(hashCanvas.addCanvas("meeow"));
+hashCanvas.addCanvas("meeow");
+console.log(hashCanvas.get("meeow"));

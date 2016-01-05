@@ -13,14 +13,7 @@
     <textarea id="output" style="width: 600px; height: 450px;"></textarea>
     <aside>Move mouse on canvas element.</aside>
 
-    <script src="Stately.js"></script>
-    <script src="utils.js"></script>
-    <script src="hashmap.js"></script>
-    <script src="segment.js"></script>
-    
-    <script src="baseObjects.js"></script>
-    <script src="Scene.js"></script>
-    <script src="game.js"></script>
+ 
     
     
     <script>
@@ -72,7 +65,21 @@
     };
     */
     </script>
-   
+<script>
+    window.requestAnimFrame = (function() {
+        'use strict';
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+    })();
+</script>
+<script src="Stately.js"></script>
+<script src="utils.js"></script>
+<script src="hashmap.js"></script>
+<script src="segment.js"></script>
+<script src="baseObjects.js"></script>
+<script src="Scene.js"></script>
+<script src="game.js"></script>
     
   </body>
 </html>
